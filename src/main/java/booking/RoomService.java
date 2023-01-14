@@ -30,6 +30,10 @@ public class RoomService {
                 .collect(Collectors.toList());
     }
 
+    public int getRoomCount() {
+        return roomAvailability.size();
+    }
+
     public void bookRoom(String roomId) {
         Room room = roomAvailability.entrySet().stream()
                 .filter(entry -> entry.getKey().getId().equals(roomId) && entry.getValue())
